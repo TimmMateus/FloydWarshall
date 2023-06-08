@@ -25,7 +25,13 @@ public class PesosGrafos {
 
     public String imprimir(){
         String imprimir = new String();
+        imprimir = "  ";
+        for (int i = 0; i < matriz.length; i++){
+            imprimir = imprimir + (char) (65+i) + "  ";
+        }
+        imprimir = imprimir + "\n";
         for (int i = 0; i < matriz.length; i++) {
+            imprimir = imprimir + (char) (65+i) + " ";
             for (int j = 0; j < matriz.length; j++) {
                 imprimir = imprimir+matriz[i][j]+", ";
             }
