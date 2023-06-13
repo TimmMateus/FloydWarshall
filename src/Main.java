@@ -9,5 +9,6 @@ public class Main{
         FloydWarshall.executar(pesos);
         System.out.println(pesos.imprimir());
         FloydWarshall.distancia(pesos);
+        Auxiliar.esperar();
     }
 }
