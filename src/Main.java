@@ -2,13 +2,13 @@ import java.io.IOException;
 
 public class Main{
     public static void main(String[] args) throws IOException {
-        String nomeArquivo = (".\\matriz.csv");
-        Leitor leitor = new Leitor();
-        PesosGrafos pesos = leitor.importar(nomeArquivo);
-        System.out.println(pesos.imprimir());
-        FloydWarshall.executar(pesos);
-        System.out.println(pesos.imprimir());
-        FloydWarshall.distancia(pesos);
-        Auxiliar.esperar();
+        String fileName = (".\\matrix.csv");
+        Reader reader = new Reader();
+        GraphWeights weights = reader.read(fileName);
+        System.out.println(weights.print());
+        FloydWarshall.execute(weights);
+        System.out.println(weights.print());
+        FloydWarshall.distance(weights);
+        Support.waiting();
     }
 }

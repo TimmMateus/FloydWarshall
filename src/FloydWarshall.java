@@ -1,50 +1,50 @@
 import java.util.Scanner;
 
 public class FloydWarshall {
-    public static void executar(PesosGrafos pesos){
-        int tamanho = pesos.getTamnho();
-        int[][] matriz = pesos.getPesos();
+    public static void execute(GraphWeights weights){
+        int size = weights.getSize();
+        int[][] matrix = weights.getWeights();
 
-        for (int k = 0; k < tamanho; k++) {
-            for (int i = 0; i < tamanho; i++) {
-                for (int j = 0; j < tamanho; j++) {
+        for (int k = 0; k < size; k++) {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
                     if(i==j){
-                        matriz[i][j]=0;
-                    }else if(matriz[i][k] + matriz[k][j] < matriz [i][j]){
-                        matriz[i][j] = matriz[i][k] + matriz[k][j];
+                        matrix[i][j]=0;
+                    }else if(matrix[i][k] + matrix[k][j] < matrix [i][j]){
+                        matrix[i][j] = matrix[i][k] + matrix[k][j];
                     }
                 }
             }
         }
         
-        pesos.setPesos(matriz);
+        weights.setWeights(matrix);
     }
 
-    public static void distancia(PesosGrafos pesos) {
-        int origem, destino;
-        System.out.println("Selecione a letra origem:");
-        origem = receberLetra(pesos);
-        System.out.println("Selecione a letra destino:");
-        destino = receberLetra(pesos);
-        System.out.println("A distancia entre "+(char)(origem+65)+" e "+(char)(destino+65)+" é de "+pesos.distancia(origem, destino));
+    public static void distance(GraphWeights weights) {
+        int origin, destination;
+        System.out.println("Choose the origin (Letter):");
+        origin = receiveLetter(weights);
+        System.out.println("Choose the destination (Letter):");
+        destination = receiveLetter(weights);
+        System.out.println("The distance between "+(char)(origin+65)+" and "+(char)(destination+65)+" is "+weights.distance(origin, destination));
     }
 
-    private static int receberLetra(PesosGrafos pesos) {
-        Scanner entrada = new Scanner(System.in);
-        int dado;
+    private static int receiveLetter(GraphWeights weights) {
+        Scanner entry = new Scanner(System.in);
+        int data;
         char in;
         do{
-            in = entrada.next().charAt(0);
-            dado = converte(in);
-            if(dado<0||dado>pesos.getTamnho()-1){
-                System.out.println("Dado inválido, insira apenas letras correspondentes.");
+            in = entry.next().charAt(0);
+            data = converte(in);
+            if(data<0||data>weights.getSize()-1){
+                System.out.println("Invalid entry. Please try only with valid Letters");
             }
-        }while(dado<0||dado>pesos.getTamnho()-1);
-        return dado;
+        }while(data<0||data>weights.getSize()-1);
+        return data;
     }
 
     private static int converte(char in) {
-        int dado = in;
-        return (dado > 96 ? dado-97 : dado-65);
+        int data = in;
+        return (data > 96 ? data-97 : data-65);
     }
 }

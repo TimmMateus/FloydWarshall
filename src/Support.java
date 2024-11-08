@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class Auxiliar {
-    public static void esperar(){
+public class Support {
+    public static void waiting(){
         Scanner sc = new Scanner(System.in);
         System.out.println();
-        System.out.println("Clique para continuar");
+        System.out.println("Press to continue...");
         sc.nextLine(); 
     }
 }
