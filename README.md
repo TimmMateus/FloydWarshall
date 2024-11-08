@@ -1,5 +1,6 @@
 # FloydWarshall
-Floyd-Warshall Algorithm University Project
+Floyd-Warshall Algorithm University Project. 
+\
 This project, developed as a university assignment, implements the Floyd-Warshall algorithm in Java to find the shortest paths between all pairs of vertices in a weighted graph. The algorithm is particularly useful for network routing, geographical mapping, dynamic programming, and game development.
 
 ## Files:
