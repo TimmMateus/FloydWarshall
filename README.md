@@ -37,8 +37,7 @@ To use the Floyd-Warshall algorithm implemented in this project, follow these st
 ### Prerequisites
 Ensure you have [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html) installed on your system. You can verify the installation by running the following command in your terminal: 
 
-``` 
-sh 
+```
 java -version
  ```
 
